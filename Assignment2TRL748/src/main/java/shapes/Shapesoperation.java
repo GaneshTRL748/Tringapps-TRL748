@@ -23,18 +23,18 @@ public class Shapesoperation {
         this.width=width;
         System.out.println("Rectangle Successfully created");
     }
-    double area(int Choise)
+    double area(int choise)
     {
-        if(Choise==1){
+        if(choise==1){
             circle=3.14115* this. radius * this.radius;
            return circle;
         }
-        else if(Choise==2)
+        else if(choise==2)
         {
             rectangle=this.length * this.width;
             return rectangle;
         }
-        else if(Choise==3)
+        else if(choise==3)
         {
             triangle= 0.5 * this.base * this.height;
             return triangle;
@@ -44,19 +44,19 @@ public class Shapesoperation {
             return 0;
         }
     }
-    double perimeter(int Choise)
+    double perimeter(int choise)
     {
-        if(Choise==1)
+        if(choise==1)
         {
             circle=2*3.14115*this.radius;
             return circle;
         }
-        else if(Choise==2)
+        else if(choise==2)
         {
             rectangle=(this.length+this.width)*2;
             return rectangle;
         }
-        else if(Choise==3)
+        else if(choise==3)
         {
             triangle=this.base + this.height+this.sidelength;
             return triangle;
