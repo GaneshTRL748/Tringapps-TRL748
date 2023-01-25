@@ -1,7 +1,9 @@
 package shapes;
 
 public class Shapesoperation {
-	double triangle,rectangle,circle;
+	double triangle;
+	double rectangle;
+	double circle;
     double length,width,radius,base,height,sidelength;
     Shapesoperation(double radius)
     {
