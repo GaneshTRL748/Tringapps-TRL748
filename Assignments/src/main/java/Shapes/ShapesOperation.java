@@ -2,20 +2,20 @@ package Shapes;
 public class ShapesOperation
 {
     double Triangle,Rectangle,Circle;
-    int Length,Width,Radius,Base,Height,SideLength;
-    ShapesOperation(int Radius)
+    double Length,Width,Radius,Base,Height,SideLength;
+    ShapesOperation(double Radius)
     {
        this.Radius=Radius; 
        System.out.println("Circle Successfully created");
     }
-    ShapesOperation(int SideLength,int Base,int Height)
+    ShapesOperation(double SideLength,double Base,double Height)
     {
         this.SideLength=SideLength;
         this.Base=Base;
         this.Height=Height;
         System.out.println("Triangle Successfully created");
     }
-    ShapesOperation(int Length,int Width)
+    ShapesOperation(double Length,double Width)
     {
         this.Length=Length;
         this.Width=Width;
@@ -46,17 +46,17 @@ public class ShapesOperation
     {
         if(Choise==1)
         {
-            Circle=2 * 3.14115 * this.Radius;
+            Circle=2*3.14115*this.Radius;
             return Circle;
         }
         else if(Choise==2)
         {
-            Rectangle=(this.Length+this.Width) * 2;
+            Rectangle=(this.Length+this.Width)*2;
             return Rectangle;
         }
         else if(Choise==3)
         {
-            Triangle=this.Base + this.Height + this.SideLength;
+            Triangle=this.Base + this.Height+this.SideLength;
             return Triangle;
         }
         else{
