@@ -28,7 +28,7 @@ public class bankoperation{
         if(pinvalidation()){
         if(amount > this.balance)
         {
-            System.out.println("Hi "+ this.accname +" Insufficient Balance!!!!");
+            logger.log("Hi "+ this.accname +" Insufficient Balance!!!!");
         }
         else{
              this.balance=balance-amount;
