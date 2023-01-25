@@ -1,3 +1,4 @@
+package BankOperation;
 import java.util.*;
 public class BankOperation{
     Scanner p=new Scanner(System.in);
@@ -74,3 +75,4 @@ public class BankOperation{
         System.out.println("Hi "+A2.AccName+" Your Current balance:"+A2.BalanceAmount());
     }
 }
+
