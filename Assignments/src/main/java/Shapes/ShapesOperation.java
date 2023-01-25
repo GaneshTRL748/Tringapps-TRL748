@@ -1,63 +1,63 @@
-package Shapes;
-public class ShapesOperation
+package shapes;
+public class shapesoperation
 {
-    double Triangle,Rectangle,Circle;
-    double Length,Width,Radius,Base,Height,SideLength;
-    ShapesOperation(double Radius)
+    double triangle,rectangle,circle;
+    double length,width,radius,base,height,sidelength;
+    shapesoperation(double radius)
     {
-       this.Radius=Radius; 
+       this.radius=radius; 
        System.out.println("Circle Successfully created");
     }
-    ShapesOperation(double SideLength,double Base,double Height)
+    shapesoperation(double sidelength,double base,double height)
     {
-        this.SideLength=SideLength;
-        this.Base=Base;
-        this.Height=Height;
+        this.sidelength=sidelength;
+        this.base=base;
+        this.height=height;
         System.out.println("Triangle Successfully created");
     }
-    ShapesOperation(double Length,double Width)
+    shapesoperation(double length,double width)
     {
-        this.Length=Length;
-        this.Width=Width;
+        this.length=length;
+        this.width=width;
         System.out.println("Rectangle Successfully created");
     }
-    double Area(int Choise)
+    double area(int Choise)
     {
         if(Choise==1){
-            Circle=3.14115* this. Radius * this.Radius;
-           return Circle;
+            circle=3.14115* this. radius * this.radius;
+           return circle;
         }
         else if(Choise==2)
         {
-            Rectangle=this.Length * this.Width;
-            return Rectangle;
+            rectangle=this.length * this.width;
+            return rectangle;
         }
         else if(Choise==3)
         {
-            Triangle= 0.5 * this.Base * this.Height;
-            return Triangle;
+            triangle= 0.5 * this.base * this.height;
+            return triangle;
         }
         else{
             System.out.println("Please Give some Choise");
             return 0;
         }
     }
-    double PeriMeter(int Choise)
+    double perimeter(int Choise)
     {
         if(Choise==1)
         {
-            Circle=2*3.14115*this.Radius;
-            return Circle;
+            circle=2*3.14115*this.radius;
+            return circle;
         }
         else if(Choise==2)
         {
-            Rectangle=(this.Length+this.Width)*2;
-            return Rectangle;
+            rectangle=(this.length+this.width)*2;
+            return rectangle;
         }
         else if(Choise==3)
         {
-            Triangle=this.Base + this.Height+this.SideLength;
-            return Triangle;
+            triangle=this.base + this.height+this.sidelength;
+            return triangle;
         }
         else{
             System.out.println("Please Give some Choise");
@@ -65,15 +65,14 @@ public class ShapesOperation
         }
     }
        public static void main(String[] args) {
-	   ShapesOperation A1=new ShapesOperation(10);
-	   ShapesOperation A2=new ShapesOperation(8,4,5);
-	   ShapesOperation A3=new ShapesOperation(10,20);
-	   System.out.println("Area of Circle:"+A1.Area(1));
-	   System.out.println("Area of Rectangle:"+A3.Area(2));
-	   System.out.println("Area of Triangle:"+A2.Area(3));
-	   System.out.println("PeriMeter of Circle:"+A1.PeriMeter(1));
-	   System.out.println("PeriMeter of Rectangle:"+A3.PeriMeter(2));
-	   System.out.println("Perimeter of Triangle:"+A2.PeriMeter(3));
+	   shapesoperation a1=new shapesoperation(10);
+	   shapesoperation a2=new shapesoperation(8,4,5);
+	   shapesoperation a3=new shapesoperation(10,20);
+	   System.out.println("Area of Circle:"+a1.area(1));
+	   System.out.println("Area of Rectangle:"+a3.area(2));
+	   System.out.println("Area of Triangle:"+a2.area(3));
+	   System.out.println("PeriMeter of Circle:"+a1.perimeter(1));
+	   System.out.println("PeriMeter of Rectangle:"+a3.perimeter(2));
+	   System.out.println("Perimeter of Triangle:"+a2.perimeter(3));
 	}
 }
-
