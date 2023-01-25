@@ -1,51 +1,78 @@
-package Students;
-import java.util.*;
-public class StudentOperation
-{
+package bankoperation;
+import java.util.Scanner;
+public class bankoperation{
     Scanner p=new Scanner(System.in);
-    String StuName,DOB;
-    double GpA;
-    char GradeLevel;
-    StudentOperation(String StuName,double GpA,char GradeLevel,String DOB)
+    String accname;
+    private int pinno;
+    long accno;
+    double  balance;
+    bankoperation(String accname,long accno,double balance,int Pino)
     {
-        this.StuName=StuName;
-        this.GpA=GpA;
-        this.GradeLevel=GradeLevel;
-        this.DOB=DOB;
+        this.accname=accname;
+        this.accno=accno;
+        this.balance=balance;
+        this.pinno=Pino;
     }
-    void UpdateGpA(){
-        double GpA1;
-        if(Validation()) {
-        System.out.println("Enter yout current GpA:");
-        GpA1=p.nextDouble();
-        this.GpA=GpA1;
-        System.out.println("GpA Updated Successfully!!!");
+    void deposit(double amount)
+    {
+        if(pinvalidation()){
+              this.balance=balance+amount;
+              System.out.println("Amount SuccessFully Credited");
         }
-        else {
-        	System.out.print("Authentication Failed!!!!1");
+        else{
+            System.out.println("Wrong Pin!!!!!!");
         }
     }
-    boolean Validation()
+    void withdraw(double amount)
     {
-    	System.out.println("Enter your DOB TO Update GPA");
-    	String DOBV=p.nextLine();
-    	if(this.DOB.equals(DOBV))
-    	{
-    		return true;
-    	}
-    	else {
-    		return false;
-    	}
+        if(pinvalidation()){
+        if(amount > this.balance)
+        {
+            System.out.println("Hi "+ this.accname +" Insufficient Balance!!!!");
+        }
+        else{
+             this.balance=balance-amount;
+             System.out.println("Amount SuccessFully Debited");
+        }
+        }
+        else{
+            System.out.println("Wrong Pin!!!");
+        }
     }
-    String Display()
+    boolean pinvalidation()
     {
-        String Str1=this.StuName+" has a "+Double.toString(this.GpA)+" GPA";
-        return Str1;
+        System.out.println("Enter your PinNumber:");
+        int pinv=p.nextInt();
+        if(pinv==this.pinno)
+        {
+            return true;
+        }
+        else{
+            return false;
+        }
     }
-	public static void main(String[] args) {
-	 StudentOperation A1=new StudentOperation("ganesh",8.0,'B',"20.11.2001");
-	 A1.UpdateGpA();
-	 System.out.println(A1.Display());
-	}
+    double balanceamount()
+    {
+        if(pinvalidation())
+        {
+          return this.balance;
+        }
+        else{
+            System.out.println("Wrong Pin!!");
+            return 0;
+        }
+    }
+    public static void main(String[] args)
+    {
+       
+        bankoperation a1=new bankoperation("ganesh",1247170000153950L,200,1685);
+        a1.deposit(500);
+        a1.withdraw(500);
+        System.out.println("Hi "+a1.accname+" Your Current balance:"+a1.balanceamount());
+        bankoperation a2=new bankoperation("Ruby",124717000153951L,5000,1247);
+        a2.deposit(2000);
+        a2.withdraw(10000);
+        System.out.println("Hi "+a2.accname+" Your Current balance:"+a2.balanceamount());
+    }
 }
 
