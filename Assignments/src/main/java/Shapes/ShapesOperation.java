@@ -46,12 +46,12 @@ public class ShapesOperation
     {
         if(Choise==1)
         {
-            Circle=2*3.14115*this.Radius;
+            Circle=2 * 3.14115 * this.Radius;
             return Circle;
         }
         else if(Choise==2)
         {
-            Rectangle=(this.Length+this.Width)*2;
+            Rectangle=(this.Length+this.Width) * 2;
             return Rectangle;
         }
         else if(Choise==3)
