@@ -56,7 +56,7 @@ public class ShapesOperation
         }
         else if(Choise==3)
         {
-            Triangle=this.Base + this.Height+this.SideLength;
+            Triangle=this.Base + this.Height + this.SideLength;
             return Triangle;
         }
         else{
