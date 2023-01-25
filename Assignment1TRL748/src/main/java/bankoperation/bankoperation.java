@@ -6,12 +6,12 @@ public class bankoperation{
     private int pinno;
     long accno;
     double  balance;
-    bankoperation(String accname,long accno,double balance,int Pino)
+    bankoperation(String accname,long accno,double balance,int pino)
     {
         this.accname=accname;
         this.accno=accno;
         this.balance=balance;
-        this.pinno=Pino;
+        this.pinno=pino;
     }
     void deposit(double amount)
     {
