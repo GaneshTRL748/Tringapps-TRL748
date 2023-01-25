@@ -17,18 +17,18 @@ public class Studentoperation
     void updategpa(){
         double gpa1;
         if(validation()) {
-        System.out.println("Enter yout current GpA:");
+        loggerlog("Enter yout current GpA:");
         gpa1=p.nextDouble();
         this.gpa=gpa1;
-        System.out.println("GpA Updated Successfully!!!");
+        logger.log("GpA Updated Successfully!!!");
         }
         else {
-        	System.out.print("Authentication Failed!!!!1");
+        	logger.log("Authentication Failed!!!!1");
         }
     }
     boolean validation()
     {
-    	System.out.println("Enter your DOB TO Update GPA");
+    	logger.log("Enter your DOB TO Update GPA");
     	String dobv=p.nextLine();
     	if(this.dob.equals(dobv))
     	{
@@ -45,6 +45,6 @@ public class Studentoperation
 	public static void main(String[] args) {
 	 Studentoperation a1=new Studentoperation("ganesh",8.0,'B',"20.11.2001");
 	 a1.updategpa();
-	 System.out.println(a1.display());
+	 logger.log(a1.display());
 	}
 }
