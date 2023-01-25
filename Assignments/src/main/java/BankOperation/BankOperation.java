@@ -1,22 +1,22 @@
-package BankOperation;
-import java.util.*;
-public class BankOperation{
+package bankoperation;
+import java.util.Scanner;
+public class bankoperation{
     Scanner p=new Scanner(System.in);
-    String AccName;
-    private int PinNo;
-    long AccNo;
-    double  Balance;
-    BankOperation(String AccName,long AccNo,double Balance,int PinNo)
+    String accname;
+    private int pinno;
+    long accno;
+    double  balance;
+    bankoperation(String accname,long accno,double balance,int Pinno)
     {
-        this.AccName=AccName;
-        this.AccNo=AccNo;
-        this.Balance=Balance;
-        this.PinNo=PinNo;
+        this.accname=accname;
+        this.accno=accno;
+        this.balance=balance;
+        this.pinno=Pinno;
     }
     void deposit(double amount)
     {
         if(pinvalidation()){
-              this.Balance=Balance+amount;
+              this.balance=balance+amount;
               System.out.println("Amount SuccessFully Credited");
         }
         else{
@@ -26,12 +26,12 @@ public class BankOperation{
     void withdraw(double amount)
     {
         if(pinvalidation()){
-        if(amount > this.Balance)
+        if(amount > this.balance)
         {
-            System.out.println("Hi "+ this.AccName +" Insufficient Balance!!!!");
+            System.out.println("Hi "+ this.accname +" Insufficient Balance!!!!");
         }
         else{
-             this.Balance=Balance-amount;
+             this.balance=balance-amount;
              System.out.println("Amount SuccessFully Debited");
         }
         }
@@ -42,8 +42,8 @@ public class BankOperation{
     boolean pinvalidation()
     {
         System.out.println("Enter your PinNumber:");
-        int PinV=p.nextInt();
-        if(PinV==this.PinNo)
+        int pinv=p.nextInt();
+        if(pinv==this.pinno)
         {
             return true;
         }
@@ -51,11 +51,11 @@ public class BankOperation{
             return false;
         }
     }
-    double BalanceAmount()
+    double balanceamount()
     {
         if(pinvalidation())
         {
-          return this.Balance;
+          return this.balance;
         }
         else{
             System.out.println("Wrong Pin!!");
@@ -65,14 +65,13 @@ public class BankOperation{
     public static void main(String[] args)
     {
        
-        BankOperation A1=new BankOperation("ganesh",1247170000153950L,200,1685);
-        A1.deposit(500);
-        A1.withdraw(500);
-        System.out.println("Hi "+A1.AccName+" Your Current balance:"+A1.BalanceAmount());
-        BankOperation A2=new BankOperation("Ruby",124717000153951L,5000,1247);
-        A2.deposit(2000);
-        A2.withdraw(10000);
-        System.out.println("Hi "+A2.AccName+" Your Current balance:"+A2.BalanceAmount());
+        bankoperation a1=new bankoperation("ganesh",1247170000153950L,200,1685);
+        a1.deposit(500);
+        a1.withdraw(500);
+        System.out.println("Hi "+a1.accname+" Your Current balance:"+a1.balanceamount());
+        bankoperation a2=new bankoperation("Ruby",124717000153951L,5000,1247);
+        a2.deposit(2000);
+        a2.withdraw(10000);
+        System.out.println("Hi "+a2.accname+" Your Current balance:"+a2.balanceamount());
     }
 }
-
