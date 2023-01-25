@@ -38,13 +38,13 @@ public class Studentoperation
     		return false;
     	}
     }
-    String Display()
+    String display()
     {
         return this.stuname+" has a "+Double.toString(this.gpa)+" GPA";
     }
 	public static void main(String[] args) {
 	 Studentoperation a1=new Studentoperation("ganesh",8.0,'B',"20.11.2001");
 	 a1.updategpa();
-	 System.out.println(a1.Display());
+	 System.out.println(a1.display());
 	}
 }
