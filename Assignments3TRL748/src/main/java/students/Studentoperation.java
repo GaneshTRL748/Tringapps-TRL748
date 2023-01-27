@@ -1,7 +1,9 @@
 package students;
 import java.util.Scanner;
+import java.util.logging.Logger;
 public class Studentoperation
 {
+	Logger l= Logger.getLogger("com.api.jar");
     Scanner p=new Scanner(System.in);
     String stuname;
     String dob;
@@ -17,18 +19,18 @@ public class Studentoperation
     void updategpa(){
         double gpa1;
         if(validation()) {
-        loggerlog("Enter yout current GpA:");
+          l.info("Enter yout current GpA:");
         gpa1=p.nextDouble();
         this.gpa=gpa1;
-        logger.log("GpA Updated Successfully!!!");
+        l.info("GpA Updated Successfully!!!");
         }
         else {
-        	logger.log("Authentication Failed!!!!1");
+        	l.info("Authentication Failed!!!!1");
         }
     }
     boolean validation()
     {
-    	logger.log("Enter your DOB TO Update GPA");
+    	l.info("Enter your DOB TO Update GPA");
     	String dobv=p.nextLine();
     	if(this.dob.equals(dobv))
     	{
@@ -38,13 +40,14 @@ public class Studentoperation
     		return false;
     	}
     }
-    String display()
+    String Display()
     {
         return this.stuname+" has a "+Double.toString(this.gpa)+" GPA";
     }
 	public static void main(String[] args) {
+		Logger l= Logger.getLogger("com.api.jar");
 	 Studentoperation a1=new Studentoperation("ganesh",8.0,'B',"20.11.2001");
 	 a1.updategpa();
-	 logger.log(a1.display());
+	 l.info(a1.Display());
 	}
 }
