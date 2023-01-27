@@ -30,7 +30,7 @@ public class Bankoperations{
         if(pinvalidation()){
         if(amount > this.balance)
         {
-            l.info("Hi "+ this.accname +" Insufficient Balance!!!!");
+            l.log("Hi "+ this.accname +" Insufficient Balance!!!!");
         }
         else{
              this.balance=balance-amount;
