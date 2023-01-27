@@ -70,11 +70,11 @@ public class Bankoperations{
         Bankoperations a1=new Bankoperations("ganesh",1247170000153950L,200,1685);
         a1.deposit(500);
         a1.withdraw(500);
-        l.info("Hi "+a1.accname+" Your Current balance:"+a1.balanceamount());
+        l.log("Hi "+a1.accname+" Your Current balance:"+a1.balanceamount());
         bankoperation a2=new bankoperation("Ruby",124717000153951L,5000,1247);
         a2.deposit(2000);
         a2.withdraw(10000);
-        l.info("Hi "+a2.accname+" Your Current balance:"+a2.balanceamount());
+        l.log("Hi "+a2.accname+" Your Current balance:"+a2.balanceamount());
     }
 }
 
