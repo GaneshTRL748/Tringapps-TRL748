@@ -40,14 +40,14 @@ public class Studentoperation
     		return false;
     	}
     }
-    String Display()
+    String display()
     {
         return this.stuname+" has a "+Double.toString(this.gpa)+" GPA";
     }
 	public static void main(String[] args) {
-		Logger l= Logger.getLogger("com.api.jar");
+         Logger l= Logger.getLogger("com.api.jar");
 	 Studentoperation a1=new Studentoperation("ganesh",8.0,'B',"20.11.2001");
 	 a1.updategpa();
-	 l.log("The Details:"+a1.Display());
+	 l.log("The Details:"+a1.display());
 	}
 }
