@@ -78,7 +78,7 @@ public class Shapesoperation {
 	   Shapesoperation a1=new Shapesoperation(10);
 	   Shapesoperation a2=new Shapesoperation(8,4,5);
 	   Shapesoperation a3=new Shapesoperation(10,20);
-	   l.info("!"+"Area of Circle:"+a1.area(1));
+	   l.info("Area of Circle:"+a1.area(1));
 	   l.info("Area of Rectangle:"+a3.area(2));
 	   l.info("Area of Triangle:"+a2.area(3));
 	   l.info("PeriMeter of Circle:"+a1.perimeter(1));
