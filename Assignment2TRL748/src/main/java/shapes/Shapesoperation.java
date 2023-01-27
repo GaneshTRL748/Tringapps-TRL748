@@ -1,32 +1,29 @@
 package shapes;
 
+import java.util.logging.Logger;
 public class Shapesoperation {
+	Logger l= Logger.getLogger("com.api.jar");
 	double triangle;
 	double rectangle;
 	double circle;
-    double length;
-    double width;
-	double radius;
-	double base;
-	double height;
-	double sidelength;
+    double length,width,radius,base,height,sidelength;
     Shapesoperation(double radius)
     {
        this.radius=radius; 
-       logger.log("Circle Successfully created");
+       l.info("Circle Successfully created");
     }
     Shapesoperation(double sidelength,double base,double height)
     {
         this.sidelength=sidelength;
         this.base=base;
         this.height=height;
-        logger.log("Triangle Successfully created");
+        l.info("Triangle Successfully created");
     }
     Shapesoperation(double length,double width)
     {
         this.length=length;
         this.width=width;
-        logger.log("Rectangle Successfully created");
+        l.info("Rectangle Successfully created");
     }
     double area(int choise)
     {
@@ -45,7 +42,7 @@ public class Shapesoperation {
             return triangle;
         }
         else{
-            logger.log("Please Give some Choise");
+            l.info("Please Give some Choise");
             return 0;
         }
     }
@@ -67,19 +64,20 @@ public class Shapesoperation {
             return triangle;
         }
         else{
-              logger.log("Please Give some Choise");
+            l.info("Please Give some Choise");
             return 0;
         }
     }
        public static void main(String[] args) {
+    	   Logger l= Logger.getLogger("com.api.jar");
 	   Shapesoperation a1=new Shapesoperation(10);
 	   Shapesoperation a2=new Shapesoperation(8,4,5);
 	   Shapesoperation a3=new Shapesoperation(10,20);
-	   logger.log("Area of Circle:"+a1.area(1));
-	   logger.log("Area of Rectangle:"+a3.area(2));
-	   logger.log("Area of Triangle:"+a2.area(3));
-	   logger.log("PeriMeter of Circle:"+a1.perimeter(1));
-	   logger.log("PeriMeter of Rectangle:"+a3.perimeter(2));
-	   logger.log("Perimeter of Triangle:"+a2.perimeter(3));
+	   l.info("Area of Circle:"+a1.area(1));
+	   l.info("Area of Rectangle:"+a3.area(2));
+	   l.info("Area of Triangle:"+a2.area(3));
+	   l.info("PeriMeter of Circle:"+a1.perimeter(1));
+	   l.info("PeriMeter of Rectangle:"+a3.perimeter(2));
+	   l.info("Perimeter of Triangle:"+a2.perimeter(3));
 	}
 }
