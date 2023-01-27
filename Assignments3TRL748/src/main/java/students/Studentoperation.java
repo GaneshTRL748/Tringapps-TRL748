@@ -48,6 +48,6 @@ public class Studentoperation
 		Logger l= Logger.getLogger("com.api.jar");
 	 Studentoperation a1=new Studentoperation("ganesh",8.0,'B',"20.11.2001");
 	 a1.updategpa();
-	 l.info(a1.Display());
+	 l.info("The Details:"+a1.Display());
 	}
 }
