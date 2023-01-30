@@ -32,11 +32,8 @@ public class Studentoperation
     {
     	l.info("Enter your DOB TO Update GPA");
     	String dobv=p.nextLine();
-    	if(this.dob.equals(dobv)){
-    	   return true;
-    	}else{
-        return false;
-	}
+    	if(this.dob.equals(dobv))return true;
+	return false;
     }
     String display()
     {
