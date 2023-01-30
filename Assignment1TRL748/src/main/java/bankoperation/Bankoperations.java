@@ -45,11 +45,7 @@ public class Bankoperations{
     {
         l.info("Enter your PinNumber:");
         int pinv=p.nextInt();
-        if(pinv==this.pinno)
-        {
-            return true;
-        }
-        return false;
+        return (this.pinno==pinv);
     }
     double balanceamount()
     {
