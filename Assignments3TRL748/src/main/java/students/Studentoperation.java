@@ -34,9 +34,10 @@ public class Studentoperation
     	String dobv=p.nextLine();
     	if(this.dob.equals(dobv))
     	{
-    		return true;
-    	}
+    	   return true;
+    	}else{
         return false;
+	}
     }
     String display()
     {
