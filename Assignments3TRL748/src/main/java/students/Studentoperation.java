@@ -36,9 +36,7 @@ public class Studentoperation
     	{
     		return true;
     	}
-    	else {
-    		return false;
-    	}
+        return false;
     }
     String display()
     {
