@@ -49,9 +49,7 @@ public class Bankoperations{
         {
             return true;
         }
-        else{
-            return false;
-        }
+        return false;
     }
     double balanceamount()
     {
