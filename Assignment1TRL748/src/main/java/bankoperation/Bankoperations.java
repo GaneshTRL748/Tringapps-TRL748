@@ -65,7 +65,7 @@ public class Bankoperations{
         a1.deposit(500);
         a1.withdraw(500);
         l.log(Level.INFO,()->"Hi "+a1.accname+" Your Current balance:"+a1.balanceamount());
-        bankoperation a2=new bankoperation("Ruby",124717000153951L,5000,1247);
+        bankoperations a2=new Bankoperations("Ruby",124717000153951L,5000,1247);
         a2.deposit(2000);
         a2.withdraw(10000);
         l.log(Level.INFO,()->"Hi "+a2.accname+" Your Current balance:"+a2.balanceamount());
