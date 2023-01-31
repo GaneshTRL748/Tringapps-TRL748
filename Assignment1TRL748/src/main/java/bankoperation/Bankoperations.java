@@ -1,6 +1,6 @@
 package bankoperation;
 import java.util.Scanner;
-import java.util.logging.Logger;
+import java.util.logging.*;
 public class Bankoperations{
     Scanner p=new Scanner(System.in);
     Logger l= Logger.getLogger("com.api.jar");
@@ -30,7 +30,7 @@ public class Bankoperations{
         if(pinvalidation()){
         if(amount > this.balance)
         {
-            l.log("Hi "+ this.accname +" Insufficient Balance!!!!");
+            l.log(Level.INFO,()->"Hi "+ this.accname +" Insufficient Balance!!!!");
         }
         else{
              this.balance=balance-amount;
@@ -64,11 +64,11 @@ public class Bankoperations{
         Bankoperations a1=new Bankoperations("ganesh",1247170000153950L,200,1685);
         a1.deposit(500);
         a1.withdraw(500);
-        l.log("Hi "+a1.accname+" Your Current balance:"+a1.balanceamount());
+        l.log(Level.INFO,()->"Hi "+a1.accname+" Your Current balance:"+a1.balanceamount());
         bankoperation a2=new bankoperation("Ruby",124717000153951L,5000,1247);
         a2.deposit(2000);
         a2.withdraw(10000);
-        l.log("Hi "+a2.accname+" Your Current balance:"+a2.balanceamount());
+        l.log(Level.INFO,()->"Hi "+a2.accname+" Your Current balance:"+a2.balanceamount());
     }
 }
 
