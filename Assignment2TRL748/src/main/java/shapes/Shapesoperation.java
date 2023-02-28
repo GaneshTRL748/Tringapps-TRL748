@@ -91,16 +91,16 @@ public class Shapesoperation {
        public static void main(String[] args) {
     	Scanner p=new Scanner(System.in);
     	out.println("Enter the radius:");
-    	int radius=p.nextInt();
+    	double radius=p.nextDouble();
 	   Shapesoperation a1=new Shapesoperation(radius);
 	   out.println("Enter the length and base and height :");
-	   int length=p.nextInt();
-	   int base=p.nextInt();
-	   int height=p.nextInt();
+	   double length=p.nextDouble();
+	   double base=p.nextDouble();
+	   double height=p.nextDouble();
 	   Shapesoperation a2=new Shapesoperation(length,base,height);
 	   out.println("Enter the lenght and width:");
-	   int reclength=p.nextInt();
-	   int width=p.nextInt();
+	   double reclength=p.nextDouble();
+	   double width=p.nextDouble();
 	   Shapesoperation a3=new Shapesoperation(reclength,width);
 	   while(true)
 	   {
