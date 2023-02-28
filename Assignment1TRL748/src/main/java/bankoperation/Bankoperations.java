@@ -1,9 +1,10 @@
 package bankoperation;
+import java.io.FileDescriptor;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
 import java.util.Scanner;
-import java.util.logging.*;
 public class Bankoperations{
-    Scanner p=new Scanner(System.in);
-    Logger l= Logger.getLogger("com.api.jar");
+    static PrintStream out=new PrintStream(new FileOutputStream(FileDescriptor.out));
     String accname;
     private int pinno;
     long accno;
@@ -19,10 +20,10 @@ public class Bankoperations{
     {
         if(pinvalidation()){
               this.balance=balance+amount;
-              l.info("Amount SuccessFully Credited");
+               out.println("Amount SuccessFully Credited");
         }
         else{
-            l.info("Wrong Pin!!!!!!");
+            out.println("Wrong Pin!!!!!!");
         }
     }
     void withdraw(double amount)
@@ -30,45 +31,81 @@ public class Bankoperations{
         if(pinvalidation()){
         if(amount > this.balance)
         {
-            l.log(Level.INFO,()->"Hi "+ this.accname +" Insufficient Balance!!!!");
+            out.println(" Insufficient Balance!!!!");
         }
         else{
              this.balance=balance-amount;
-             l.info("Amount SuccessFully Debited");
+             out.println("Amount SuccessFully Debited");
         }
         }
         else{
-            l.info("Wrong Pin!!!");
+              out.println("Wrong Pin!!!");
         }
     }
     boolean pinvalidation()
-    {
-        l.info("Enter your PinNumber:");
+    {	
+    	Scanner p=new Scanner(System.in);
+       out.println("Enter your PinNumber:");
         int pinv=p.nextInt();
         return (this.pinno==pinv);
     }
-    double balanceamount()
+    String balanceamount()
     {
         if(pinvalidation())
         {
-          return this.balance;
+          return  Double.toString(this.balance);
         }
-        else{
-            l.info("Wrong Pin!!");
-            return 0;
-        }
+        else {
+        	return "";
+        }   
     }
     public static void main(String[] args)
     {
-    	 Logger l= Logger.getLogger("com.api.jar");
-        Bankoperations a1=new Bankoperations("ganesh",1247170000153950L,200,1685);
-        a1.deposit(500);
-        a1.withdraw(500);
-        l.log(Level.INFO,()->"Hi "+a1.accname+" Your Current balance:"+a1.balanceamount());
-        bankoperations a2=new Bankoperations("Ruby",124717000153951L,5000,1247);
-        a2.deposit(2000);
-        a2.withdraw(10000);
-        l.log(Level.INFO,()->"Hi "+a2.accname+" Your Current balance:"+a2.balanceamount());
+    	Scanner p=new Scanner(System.in);
+    	out.println("Enter your Name,Acc_Number,Balance,Pin_number");
+		String name=p.next();
+		long accno=p.nextLong();
+		double balance=p.nextDouble();
+		int pinno=p.nextInt();
+		Bankoperations a1= new Bankoperations(name,accno,balance,pinno);
+    	while(true)
+    	{
+    		out.println("Enter your choice 1-deposit 2-withdraw 3-balanceamount");
+    		int choice=p.nextInt();
+    		switch(choice)
+    		{
+    		   case 1:
+    		   {
+    			   double amount=p.nextDouble();
+    			   a1.deposit(amount);
+    			  break;
+    		   }
+    		   case 2:
+    		   {
+    			   double amount=p.nextDouble();
+    			   a1.withdraw(amount);
+    			   break;
+    		   }
+    		   case 3:
+    		   {
+    			  String currentbal=a1.balanceamount();
+    			  if(currentbal.equals(""))
+    			  {
+    				  out.println("oops wrong pin!!!!");
+    			  }
+    			  else {
+    				  out.println("Your current blance:"+currentbal);
+    			  }
+    			 break;
+    		   }
+    		   default:
+    		   {
+    			   System.exit(0);
+    			   break;
+    		   }
+    		}
+    	}
+         
     }
 }
 
