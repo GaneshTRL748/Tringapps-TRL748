@@ -1,9 +1,11 @@
 package students;
+import java.io.FileDescriptor;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
 import java.util.Scanner;
-import java.util.logging.*;
 public class Studentoperation
 {
-	Logger l= Logger.getLogger("com.api.jar");
+	static PrintStream out=new PrintStream(new FileOutputStream(FileDescriptor.out));
     Scanner p=new Scanner(System.in);
     String stuname;
     String dob;
@@ -19,29 +21,34 @@ public class Studentoperation
     void updategpa(){
         double gpa1;
         if(validation()) {
-          l.info("Enter yout current GpA:");
+          out.println("Enter yout current GpA:");
         gpa1=p.nextDouble();
         this.gpa=gpa1;
-        l.info("GpA Updated Successfully!!!");
+        out.println("GpA Updated Successfully!!!");
         }
         else {
-        	l.info("Authentication Failed!!!!1");
+        	out.println("Authentication Failed!!!!1");
         }
     }
     boolean validation()
     {
-    	l.info("Enter your DOB TO Update GPA");
+    	out.println("Enter your DOB TO Update GPA");
     	String dobv=p.nextLine();
-         return (this.dob.equals(dobv));
+    	return (this.dob.equals(dobv));
     }
     String display()
     {
         return this.stuname+" has a "+Double.toString(this.gpa)+" GPA";
     }
 	public static void main(String[] args) {
-         Logger l= Logger.getLogger("com.api.jar");
-	 Studentoperation a1=new Studentoperation("ganesh",8.0,'B',"20.11.2001");
+		Scanner p=new Scanner(System.in);
+		out.println("Enter your name and gpa and grade and dob");
+	   String name=p.next();
+	   double gpa=p.nextDouble();
+	   char grade=p.next().charAt(0);
+	   String dob=p.next();
+	 Studentoperation a1=new Studentoperation(name,gpa,grade,dob);
 	 a1.updategpa();
-	 l.log(Level.INFO,()->"The Details:"+a1.display());
+	 out.println(a1.display());
 	}
 }
